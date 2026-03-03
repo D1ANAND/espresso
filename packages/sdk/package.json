@@ -1,0 +1,32 @@
+{
+  "name": "@Espresso/sdk",
+  "version": "1.0.0",
+  "description": "Espresso SDK - Shared types and utilities for Bitcoin Multichain Protocol",
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.ts\""
+  },
+  "keywords": [
+    "bitcoin",
+    "ccip",
+    "sdk",
+    "types"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "ethers": "^6.15.0",
+    "typescript": "^5.3.3"
+  }
+}
