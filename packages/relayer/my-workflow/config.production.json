@@ -1,0 +1,17 @@
+{
+  "schedule": "*/30 * * * * *",
+  "myAddress": "0x3264ecf9fc5cd46cfde1033f26e63da85c964e76",
+  "url": "http://localhost:8000",
+  "evms": [
+    {
+      "contractAddress": "0x103F53787b29ddf2B34ae185C13b7a6aE7445a8d",
+      "chainSelectorName": "ethereum-testnet-sepolia",
+      "gasLimit": "1000000"
+    }
+  ],
+  "rpcs": ["https://polygon-rpc.com/"],
+  "bitcoinRpc": {
+    "url": "https://bitcoin-testnet4.gateway.tatum.io/",
+    "apiKey": "t-6921f4822a9f4bf66c8503de-193fc72573c14dd49eb02ae0"
+  }
+}

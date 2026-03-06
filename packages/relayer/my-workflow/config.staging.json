@@ -1,0 +1,36 @@
+{
+  "schedule": "*/30 * * * * *",
+  "myAddress": "0xefF083B4d0d0435ac40C43b95661Ad45EfCAcAf2",
+  "url": "http://localhost:8000",
+  "evms": [
+    {
+      "contractAddress": "0xefF083B4d0d0435ac40C43b95661Ad45EfCAcAf2",
+      "chainSelectorName": "ethereum-testnet-sepolia",
+      "gasLimit": "1000000"
+    },
+    {
+      "contractAddress": "0xefF083B4d0d0435ac40C43b95661Ad45EfCAcAf2",
+      "chainSelectorName": "ethereum-testnet-sepolia",
+      "gasLimit": "1000000"
+    },
+    {
+      "contractAddress": "0xefF083B4d0d0435ac40C43b95661Ad45EfCAcAf2",
+      "chainSelectorName": "ethereum-testnet-sepolia",
+      "gasLimit": "1000000"
+    }
+  ],
+  "strings": [
+    "hello from sepolia",
+    "hello from mainnet",
+    "hello from citera"
+  ],
+  "rpcs": [    
+    "https://ethereum-sepolia.publicnode.com",
+    "https://ethereum-sepolia.publicnode.com",
+    "https://ethereum-sepolia.publicnode.com"
+  ],
+  "bitcoinRpc": {
+    "url": "https://bitcoin-testnet4.gateway.tatum.io/",
+    "apiKey": "t-6921f4822a9f4bf66c8503de-193fc72573c14dd49eb02ae0"
+  }
+}
