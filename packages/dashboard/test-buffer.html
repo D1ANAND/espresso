@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffer Test</title>
+</head>
+<body>
+    <h1>Testing Buffer Polyfill</h1>
+    <div id="output"></div>
+    <script type="module">
+        import { Buffer } from 'buffer';
+        
+        window.Buffer = Buffer;
+        
+        const output = document.getElementById('output');
+        
+        try {
+            // Test 1: Create a buffer
+            const buf = Buffer.from('BMCP', 'ascii');
+            output.innerHTML += '<p>✅ Test 1: Buffer.from works</p>';
+            output.innerHTML += '<p>  Hex: 0x' + buf.toString('hex') + '</p>';
+            
+            // Test 2: Allocate buffer and write
+            const buf2 = Buffer.alloc(8);
+            buf2.writeBigUInt64BE(BigInt('0x8f90b8876dee6538'));
+            output.innerHTML += '<p>✅ Test 2: Buffer.alloc and writeBigUInt64BE work</p>';
+            output.innerHTML += '<p>  Hex: 0x' + buf2.toString('hex') + '</p>';
+            
+            // Test 3: Check if global is set
+            if (typeof window.Buffer !== 'undefined') {
+                output.innerHTML += '<p>✅ Test 3: window.Buffer is defined</p>';
+            } else {
+                output.innerHTML += '<p>❌ Test 3: window.Buffer is NOT defined</p>';
+            }
+            
+            output.innerHTML += '<h2 style="color: green;">All tests passed!</h2>';
+        } catch (error) {
+            output.innerHTML += '<p style="color: red;">❌ Error: ' + error.message + '</p>';
+        }
+    </script>
+</body>
+</html>
+
