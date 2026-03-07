@@ -1,0 +1,38 @@
+{
+  "name": "@Espresso/contracts",
+  "version": "1.0.0",
+  "description": "Espresso Smart Contracts for EVM Chains",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean && rm -rf cache artifacts",
+    "deploy:sepolia": "hardhat ignition deploy --network sepolia --verify",
+    "deploy:polygon": "hardhat ignition deploy --network polygon --verify",
+    "deploy:local": "hardhat ignition deploy --network hardhatMainnet"
+  },
+  "keywords": [
+    "bitcoin",
+    "ccip",
+    "solidity",
+    "contracts"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@chainlink/contracts-ccip": "^1.4.0",
+    "@openzeppelin/contracts": "^5.0.1",
+    "@uniswap/v3-core": "^1.0.1",
+    "@uniswap/v3-periphery": "^1.4.4"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^3.0.5",
+    "@nomicfoundation/hardhat-keystore": "^3.0.3",
+    "@nomicfoundation/hardhat-verify": "^3.0.7",
+    "@types/node": "^22.19.1",
+    "dotenv": "^16.4.5",
+    "forge-std": "github:foundry-rs/forge-std#v1.9.7",
+    "hardhat": "^3.0.15",
+    "typescript": "~5.8.0"
+  },
+  "type": "module"
+}
