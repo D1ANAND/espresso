@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+*.log
+coverage/
+.DS_Store
+cache/
+artifacts/
+typechain-types/
+deployments/

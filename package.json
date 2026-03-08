@@ -1,0 +1,56 @@
+{
+  "name": "Espresso",
+  "version": "1.0.0",
+  "description": "Bitcoin Multichain Protocol - Cross-chain messaging from Bitcoin to EVM chains",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "overrides": {
+    "glob": "^10.4.5",
+    "rimraf": "^5.0.10",
+    "inflight": "npm:@zkochan/inflight@^1.0.0",
+    "@humanwhocodes/config-array": "npm:@eslint/config-array@^0.19.0",
+    "@humanwhocodes/object-schema": "npm:@eslint/object-schema@^2.1.4"
+  },
+  "scripts": {
+    "test": "npm run test:bitcoin && npm run test:evm && npm run test:integration",
+    "test:bitcoin": "tsx tests/integration/bitcoin-encoder.test.ts",
+    "test:evm": "tsx tests/integration/evm-encoder.test.ts",
+    "test:integration": "tsx tests/integration/full-flow.test.ts",
+    "test:all": "npm test",
+    "build": "npm run build --workspaces",
+    "build:sdk": "npm run build --workspace=@Espresso/sdk",
+    "build:dashboard": "npm run build --workspace=@Espresso/dashboard",
+    "dev:combined": "cd packages/combined-backend && npm run dev",
+    "dev:esp-escrow": "cd packages/esp-escrow && npm run dev",
+    "clean": "npm run clean --workspaces",
+    "dev:bitcoin-api": "cd packages/bitcoin-api && npm run dev",
+    "dev:relayer-api": "cd packages/relayer-api && npm run dev",
+    "example:bitcoin": "tsx examples/bitcoin-encoder-usage.ts",
+    "example:evm": "tsx examples/evm-encoder-usage.ts",
+    "example:api": "tsx examples/bitcoin-api-integration.ts",
+    "example:protocol": "tsx examples/protocol-detection.ts",
+    "example:scan-tx": "tsx examples/scan-bitcoin-tx.ts",
+    "example:monitor": "tsx examples/monitor-bitcoin-blocks.ts",
+    "example:decoder-flow": "tsx examples/bitcoin-api-decoder-flow.ts"
+  },
+  "keywords": [
+    "bitcoin",
+    "ethereum",
+    "cross-chain",
+    "ccip",
+    "op_return"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.4"
+  }
+}

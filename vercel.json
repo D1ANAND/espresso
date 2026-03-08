@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "buildCommand": "npm run build:sdk && npm run build:dashboard && mkdir -p dist && cp -r packages/dashboard/dist/* dist/ && ls -la dist/",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
+}
