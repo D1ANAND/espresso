@@ -8,7 +8,7 @@
 
 ## Overview
 
-Espresso is a revolutionary system that enables true off-grid cross-chain intents without needing an internet connection. By leveraging LoRa, RF signals, and Satellite communications, users can execute complex interactions on EVM chains, settled immutably via the Bitcoin network.
+Espresso is a decentralized "Satellite-to-Chainlink" protocol designed to bring the world's 2.6 billion offline users into the DeFi ecosystem. By combining LoRa/Satellite communication with Chainlink Runtime (CRE), Espresso allows users to trigger complex cross-chain intents from remote, internet-blind areas using $5 hardware and the Bitcoin network.
 
 ### How it Works (No Internet Required)
 
