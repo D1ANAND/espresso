@@ -1,0 +1,447 @@
+{
+  "compiler": {
+    "version": "0.8.19+commit.7dd6d404"
+  },
+  "language": "Solidity",
+  "output": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_relayer",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "txid",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "string",
+            "name": "reason",
+            "type": "string",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "AuthorizationViolation",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "txid",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "address",
+            "name": "targetContract",
+            "type": "address",
+            "indexed": true
+          },
+          {
+            "internalType": "bytes4",
+            "name": "functionSelector",
+            "type": "bytes4",
+            "indexed": true
+          },
+          {
+            "internalType": "bool",
+            "name": "success",
+            "type": "bool",
+            "indexed": false
+          },
+          {
+            "internalType": "bytes",
+            "name": "returnData",
+            "type": "bytes",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "FunctionExecuted",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "txid",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "bytes32",
+            "name": "bitcoinPubKeyX",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "address",
+            "name": "targetContract",
+            "type": "address",
+            "indexed": false
+          },
+          {
+            "internalType": "bytes4",
+            "name": "functionSelector",
+            "type": "bytes4",
+            "indexed": false
+          },
+          {
+            "internalType": "uint256",
+            "name": "nonce",
+            "type": "uint256",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "MessageReceived",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "txid",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "bytes32",
+            "name": "bitcoinPubKeyX",
+            "type": "bytes32",
+            "indexed": false
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageHash",
+            "type": "bytes32",
+            "indexed": false
+          },
+          {
+            "internalType": "bool",
+            "name": "isValid",
+            "type": "bool",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "SignatureVerified",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "",
+            "type": "bytes32"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "bitcoinNonces",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "pubKeyX",
+            "type": "bytes32"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getNonce",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "txid",
+            "type": "bytes32"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "isMessageProcessed",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ]
+      },
+      {
+        "inputs": [],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "owner",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "",
+            "type": "bytes32"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "processedMessages",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "txid",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "struct BMCPMessageReceiver.BMCPMessage",
+            "name": "message",
+            "type": "tuple",
+            "components": [
+              {
+                "internalType": "bytes2",
+                "name": "protocol",
+                "type": "bytes2"
+              },
+              {
+                "internalType": "uint64",
+                "name": "chainSelector",
+                "type": "uint64"
+              },
+              {
+                "internalType": "address",
+                "name": "targetContract",
+                "type": "address"
+              },
+              {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+              },
+              {
+                "internalType": "uint256",
+                "name": "nonce",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "deadline",
+                "type": "uint256"
+              },
+              {
+                "internalType": "struct BMCPMessageReceiver.Authorization",
+                "name": "authorization",
+                "type": "tuple",
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "allowedContract",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "bytes4",
+                    "name": "allowedFunction",
+                    "type": "bytes4"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "maxValue",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "validUntil",
+                    "type": "uint256"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "internalType": "struct BMCPMessageReceiver.SchnorrProof",
+            "name": "proof",
+            "type": "tuple",
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "pubKeyX",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "bytes",
+                "name": "signature",
+                "type": "bytes"
+              }
+            ]
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "receiveMessage",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ]
+      },
+      {
+        "inputs": [],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "relayer",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_relayer",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "setRelayer"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "pubKeyX",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "verifySignatureOnly",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ]
+      }
+    ],
+    "devdoc": {
+      "kind": "dev",
+      "methods": {
+        "getNonce(bytes32)": {
+          "details": "Get current nonce for a Bitcoin public key"
+        },
+        "isMessageProcessed(bytes32)": {
+          "details": "Check if message has been processed"
+        },
+        "receiveMessage(bytes32,(bytes2,uint64,address,bytes,uint256,uint256,(address,bytes4,uint256,uint256)),(bytes32,bytes))": {
+          "details": "Main entry point for BMCP messages from Bitcoin",
+          "params": {
+            "message": "The decoded BMCP message from OP_RETURN",
+            "proof": "Schnorr signature proof from Bitcoin transaction input",
+            "txid": "Bitcoin transaction ID"
+          }
+        },
+        "setRelayer(address)": {
+          "details": "Update relayer address (only owner)"
+        },
+        "verifySignatureOnly(bytes32,bytes32,bytes)": {
+          "details": "Verify a signature without processing (for testing)"
+        }
+      },
+      "version": 1
+    },
+    "userdoc": {
+      "kind": "user",
+      "methods": {},
+      "version": 1
+    }
+  },
+  "settings": {
+    "remappings": [
+      "forge-std/=lib/forge-std/src/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "compilationTarget": {
+      "src/BMCPMessageReceiver.sol": "BMCPMessageReceiver"
+    },
+    "evmVersion": "paris",
+    "libraries": {}
+  },
+  "sources": {
+    "src/BMCPMessageReceiver.sol": {
+      "keccak256": "0xda32054c61d8b6bd3f5b375464507fb80ce38b3b1ed9022c205b2241a5d2eb3d",
+      "urls": [
+        "bzz-raw://8c565ef84b131fb8d0a1f107cd48507b38175ecf18c52ab8a7db4a640f4558ee",
+        "dweb:/ipfs/QmcWzb4XrinMHAQHSyGZVymUFXqHbd5ouFTYtKaB8dYxa2"
+      ],
+      "license": "MIT"
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,5 @@
+Contract: SchnorrVerifyCaller
+Address: 0x54AAc9DE386C8185Fe8842456E55d7bF17b1f8aB
+Chain: Citrea Testnet (5115)
+Compiler: 0.8.19
+Optimization: Enabled (200 runs)

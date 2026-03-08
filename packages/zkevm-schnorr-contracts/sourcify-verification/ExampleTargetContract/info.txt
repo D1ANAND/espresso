@@ -1,0 +1,5 @@
+Contract: ExampleTargetContract
+Address: 0x2314dfD079C2b2cf2C3247fCd552d9d52Ac486De
+Chain: Citrea Testnet (5115)
+Compiler: 0.8.19
+Optimization: Enabled (200 runs)

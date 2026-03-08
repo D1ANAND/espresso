@@ -1,0 +1,6 @@
+Contract: BMCPMessageReceiver
+Address: 0xDeD3f4058Ccdf3C05Bc7f7c38cb07E66A6023893
+Chain: Citrea Testnet (5115)
+Compiler: 0.8.19
+Optimization: Enabled (200 runs)
+Constructor Args: 0x2cac89ABf06DbE5d3a059517053B7144074e1CE5

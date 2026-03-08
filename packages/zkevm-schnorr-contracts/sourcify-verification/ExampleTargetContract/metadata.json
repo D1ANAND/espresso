@@ -1,0 +1,442 @@
+{
+  "compiler": {
+    "version": "0.8.19+commit.7dd6d404"
+  },
+  "language": "Solidity",
+  "output": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "address[]",
+            "name": "targets",
+            "type": "address[]",
+            "indexed": false
+          },
+          {
+            "internalType": "bytes[]",
+            "name": "calls",
+            "type": "bytes[]",
+            "indexed": false
+          },
+          {
+            "internalType": "bool[]",
+            "name": "successes",
+            "type": "bool[]",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "BatchExecuted",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "key",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes",
+            "indexed": false
+          },
+          {
+            "internalType": "address",
+            "name": "storer",
+            "type": "address",
+            "indexed": true
+          }
+        ],
+        "type": "event",
+        "name": "DataStored",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "sender",
+            "type": "address",
+            "indexed": true
+          },
+          {
+            "internalType": "string",
+            "name": "message",
+            "type": "string",
+            "indexed": false
+          },
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "MessageReceived",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "from",
+            "type": "address",
+            "indexed": true
+          },
+          {
+            "internalType": "address",
+            "name": "to",
+            "type": "address",
+            "indexed": true
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "TokensTransferred",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "balances",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address[]",
+            "name": "targets",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bytes[]",
+            "name": "calls",
+            "type": "bytes[]"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "batchExecute"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "",
+            "type": "bytes32"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "dataStore",
+        "outputs": [
+          {
+            "internalType": "bytes",
+            "name": "",
+            "type": "bytes"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getBalance",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "key",
+            "type": "bytes32"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getData",
+        "outputs": [
+          {
+            "internalType": "bytes",
+            "name": "",
+            "type": "bytes"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getMessage",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "inputs": [],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "messageCount",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "to",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "mint"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "key",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "storeData"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "message",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "storeMessage"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "tokenIn",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "tokenOut",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amountIn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minAmountOut",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "swap",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "amountOut",
+            "type": "uint256"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "to",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "transfer"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "userMessages",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "devdoc": {
+      "kind": "dev",
+      "methods": {
+        "batchExecute(address[],bytes[])": {
+          "details": "Execute batch of calls",
+          "params": {
+            "calls": "Array of calldata",
+            "targets": "Array of target contracts"
+          }
+        },
+        "getBalance(address)": {
+          "details": "Get user's balance"
+        },
+        "getData(bytes32)": {
+          "details": "Get stored data"
+        },
+        "getMessage(address)": {
+          "details": "Get user's message"
+        },
+        "mint(address,uint256)": {
+          "details": "Mint tokens to address (for testing)",
+          "params": {
+            "amount": "Amount to mint",
+            "to": "Recipient address"
+          }
+        },
+        "storeData(bytes32,bytes)": {
+          "details": "Store arbitrary data",
+          "params": {
+            "data": "Data to store",
+            "key": "Storage key"
+          }
+        },
+        "storeMessage(string)": {
+          "details": "Store a message from Bitcoin user",
+          "params": {
+            "message": "The message to store"
+          }
+        },
+        "swap(address,address,uint256,uint256)": {
+          "details": "Swap tokens (mock implementation)",
+          "params": {
+            "amountIn": "Amount of input tokens",
+            "minAmountOut": "Minimum output tokens",
+            "tokenIn": "Input token address",
+            "tokenOut": "Output token address"
+          }
+        },
+        "transfer(address,uint256)": {
+          "details": "Transfer tokens between addresses",
+          "params": {
+            "amount": "Amount to transfer",
+            "to": "Recipient address"
+          }
+        }
+      },
+      "version": 1
+    },
+    "userdoc": {
+      "kind": "user",
+      "methods": {},
+      "version": 1
+    }
+  },
+  "settings": {
+    "remappings": [
+      "forge-std/=lib/forge-std/src/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "compilationTarget": {
+      "src/ExampleTargetContract.sol": "ExampleTargetContract"
+    },
+    "evmVersion": "paris",
+    "libraries": {}
+  },
+  "sources": {
+    "src/ExampleTargetContract.sol": {
+      "keccak256": "0x8cbc84e526bc80d74bd4a4824a7ba67c7de2870cec7911cdf01c5f0c598cca21",
+      "urls": [
+        "bzz-raw://5e89e0d07fbc3a780a769b56f9ee300a6e7d204596c363ab49234d4d50c702e9",
+        "dweb:/ipfs/QmdaaLqbp8sD3EtmGMxw3D8a9WceTUKXPG5hYQ9oweSZWQ"
+      ],
+      "license": "MIT"
+    }
+  },
+  "version": 1
+}

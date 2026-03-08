@@ -1,0 +1,221 @@
+{
+  "compiler": {
+    "version": "0.8.19+commit.7dd6d404"
+  },
+  "language": "Solidity",
+  "output": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "messageHash",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "bytes32",
+            "name": "pubKeyX",
+            "type": "bytes32",
+            "indexed": true
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes",
+            "indexed": false
+          },
+          {
+            "internalType": "bool",
+            "name": "isValid",
+            "type": "bool",
+            "indexed": false
+          },
+          {
+            "internalType": "bytes",
+            "name": "precompileOutput",
+            "type": "bytes",
+            "indexed": false
+          }
+        ],
+        "type": "event",
+        "name": "SchnorrVerificationResult",
+        "anonymous": false
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "pubKeyX",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getPrecompileResponse",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "ok",
+            "type": "bool"
+          },
+          {
+            "internalType": "bytes",
+            "name": "output",
+            "type": "bytes"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "pubKeyX",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "schnorrVerify",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "isValid",
+            "type": "bool"
+          }
+        ]
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "pubKeyX",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes",
+            "name": "signature",
+            "type": "bytes"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "schnorrVerifyWithLogging",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "isValid",
+            "type": "bool"
+          }
+        ]
+      },
+      {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "testPrecompile",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ]
+      }
+    ],
+    "devdoc": {
+      "kind": "dev",
+      "methods": {
+        "schnorrVerify(bytes32,bytes32,bytes)": {
+          "details": "All inputs must be big-endian byte sequences.",
+          "params": {
+            "messageHash": "32-byte hash of the signed message",
+            "pubKeyX": "32-byte public key X coordinate (big-endian, Y is implicitly even per BIP340)",
+            "signature": "64-byte Schnorr signature (r || s), both 32-byte values concatenated"
+          },
+          "returns": {
+            "isValid": "True if signature is valid, false otherwise."
+          }
+        },
+        "schnorrVerifyWithLogging(bytes32,bytes32,bytes)": {
+          "details": "Same as schnorrVerify but emits events for debugging"
+        },
+        "testPrecompile()": {
+          "details": "This function tests with hardcoded values to verify precompile functionality"
+        }
+      },
+      "version": 1
+    },
+    "userdoc": {
+      "kind": "user",
+      "methods": {
+        "getPrecompileResponse(bytes32,bytes32,bytes)": {
+          "notice": "Get precompile raw response for debugging"
+        },
+        "schnorrVerify(bytes32,bytes32,bytes)": {
+          "notice": "Verifies a BIP340 Schnorr signature."
+        },
+        "schnorrVerifyWithLogging(bytes32,bytes32,bytes)": {
+          "notice": "Verifies a BIP340 Schnorr signature with detailed logging."
+        },
+        "testPrecompile()": {
+          "notice": "Test the precompile with known test vectors"
+        }
+      },
+      "version": 1
+    }
+  },
+  "settings": {
+    "remappings": [
+      "forge-std/=lib/forge-std/src/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "compilationTarget": {
+      "src/SchnorrVerifyCaller.sol": "SchnorrVerifyCaller"
+    },
+    "evmVersion": "paris",
+    "libraries": {}
+  },
+  "sources": {
+    "src/SchnorrVerifyCaller.sol": {
+      "keccak256": "0xfa6c9d23da2d35139b206c778e74d59eb9d88dc50de5d9ad98a0e8d2b5f9ddb0",
+      "urls": [
+        "bzz-raw://d4c70c98d204019150d0896ec349071f04ee523f62fb256b458407c8acdf1825",
+        "dweb:/ipfs/QmNkRw3ZvKgx1DRdvWoCffxQ53Smh8Cg3zfuFxxeDrvAib"
+      ],
+      "license": "MIT"
+    }
+  },
+  "version": 1
+}
